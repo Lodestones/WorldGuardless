@@ -1,0 +1,10 @@
+name: WorldGuardless
+author: https://lode.gg/
+description: WorldGuardless is a plugin that allows you to disable all those annoying default WorldGuard commands.
+version: '${project.version}'
+main: gg.lode.worldguardless.WorldGuardless
+api-version: '1.20'
+depend:
+  - WorldGuard
+loadbefore:
+  - WorldGuard
