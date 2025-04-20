@@ -30,7 +30,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.2.4</version>
+                <version>3.6.0</version>
                 <executions>
                     <execution>
                         <phase>package</phase>
@@ -42,7 +42,8 @@
                                     <shadedPattern>to.lodestone.bookshelfapi.worldguardless</shadedPattern>
                                 </relocation>
                             </relocations>
-                            <minimizeJar>true</minimizeJar>
+                            <minimizeJar>false</minimizeJar>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
                         </configuration>
                     </execution>
                 </executions>
