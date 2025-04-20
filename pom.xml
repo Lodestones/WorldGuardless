@@ -12,7 +12,7 @@
     <name>WorldGuardless</name>
 
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>17</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -34,9 +34,16 @@
                 <executions>
                     <execution>
                         <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
+                        <goals><goal>shade</goal></goals>
+                        <configuration>
+                            <relocations>
+                                <relocation>
+                                    <pattern>to.lodestone.bookshelfapi</pattern>
+                                    <shadedPattern>to.lodestone.bookshelfapi.worldguardless</shadedPattern>
+                                </relocation>
+                            </relocations>
+                            <minimizeJar>true</minimizeJar>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
@@ -70,9 +77,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.github.Lodestones</groupId>
+            <groupId>to.lodestone</groupId>
             <artifactId>Bookshelf-API</artifactId>
-            <version>1.1.22</version>
+            <version>1.1.3</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
